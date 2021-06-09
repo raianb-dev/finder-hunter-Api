@@ -10,7 +10,8 @@ class Data:
 
 
 class Conection:
-  def __init__(self, api=False):
-    self.api = str(ph(api))
+  def __init__(self):
+    self.key = '53ad5d83b0e3e0a6fc32b75ea0fcafaa3d65d15b'
+    self.api = str(ph(self.key))
     print('Conectado com Api')
   
