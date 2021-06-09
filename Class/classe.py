@@ -6,12 +6,10 @@ class Data:
     self.var = pd.DataFrame(var)
   
   def exibir(self):
-    print(self.create)
+    print(self.var)
 
 
-class Conection:
-  def __init__(self):
-    self.key = '53ad5d83b0e3e0a6fc32b75ea0fcafaa3d65d15b'
-    self.api = str(ph(self.key))
-    print('Conectado com Api')
+
+    
   
+    
