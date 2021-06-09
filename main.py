@@ -1,12 +1,13 @@
-from Class import classe
-from pyhunter import PyHunter as ph
+from finder import Class
 
+#Recebendo Chave de Api
+key = str(input('Chave de Api: '))
 
-api = ph('my_hunter_api_key')
+#Autenticando com Hunter.io
+auth = Class.FinderEmail()
+conn = auth.Autenticar(key)
 
-#Finder All e-mails
-comp = str(input('Company :'))
-email = api.domain_search(company=f'{comp}')
+#Recebendo dados para buscar
+company = str(input('Company: '))
+email = conn.domain_search(company='{}'.format(company))
 
-df = classe.Data(email)
-df.exibir()
