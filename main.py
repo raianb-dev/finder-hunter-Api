@@ -1,6 +1,5 @@
 from finder import Class, Export
 
-
 #Autenticando api
 api = Class.Conection()
 
@@ -11,18 +10,17 @@ while api.Autenticar() != True:
 
 #Informações da Conta
 api.Acount()
+
 #Recebendo dados para buscar
-company = str(input('Buscar por empresas: '))
-email = api.domain_search(company='{}'.format(company))
+email = api.Procurar()
 
 
 #Criando Um DataFrame
-create = Class.Conection()
-df = create.CreateDf(email)
+df = api.CreateDf(email)
 
 #Exportando para uma arquivo Csv
 out = Export.Export()
-out.Save(df)
+out.Rename(df)
 
 
 

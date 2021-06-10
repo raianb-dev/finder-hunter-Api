@@ -21,9 +21,11 @@ class Conection:
     return 
 
   #Método Procurar
-  def Procurar(self, comp):
-    ph.domain_search(company=comp)
-    self.company = comp  
+  def Procurar(self):
+    self.emp = str(input('Buscar empresa: '))
+    auth = ph(self.api)
+    busca = auth.domain_search(company=f'{self.emp}')
+    return busca
 
   #Método Createdf
   def CreateDf(self, df):
