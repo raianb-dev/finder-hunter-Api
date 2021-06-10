@@ -1,4 +1,4 @@
-from finder import (Class, Export)
+from finder import Class, Export
 
 #Recebendo Chave de Api
 key = str(input('Chave de Api: '))
@@ -16,7 +16,8 @@ conn = Class.Class()
 df = conn.CreateDf(email)
 
 #Exportando para uma arquivo Csv
-out = Export.Export(df)
+out = Export.Export()
+out.Save(df)
 
 
 

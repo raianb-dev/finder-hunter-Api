@@ -19,7 +19,6 @@ class Class:
     self.company = comp  
 
   #Método Createdf
-  def CreateDf(self, var):
-    self.var = pd.DataFrame(var)
-    print(self.var)
-    return
+  def CreateDf(self, df):
+    self.df = pd.DataFrame(df)
+    return self.df
