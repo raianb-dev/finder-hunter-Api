@@ -1,17 +1,23 @@
 import pandas as pd
 from pyhunter import PyHunter as ph
+import requests
 
 class Class:
 
   #Método Autênticar
-  def Autenticar(self, api):
-    self.auth = str(api)
-    self.con = ph(api)
-    if self.auth != '':
-      print('Conectado!')
+  def Autenticar(self):
+    
+    self.api = str(input('Chave de api: '))
+
+    self.response = requests.get(f"https://api.hunter.io/v2/account?api_key={self.api}")
+    if self.response.status_code == 200:
+      print('Conectado com Hunter.io!')
+      return True
+      pass
     else:
-      print("'Api falhou ao conectar'",type(self.auth))      
-    return self.con
+      print("Falhou! Tente novamente.")
+      return False
+    return 
 
   #Método Procurar
   def Procurar(self, comp):

@@ -1,19 +1,21 @@
 from finder import Class, Export
 
-#Recebendo Chave de Api
-key = str(input('Chave de Api: '))
+#Autenticando api
+api = Class.Class()
 
-#Autenticando com Hunter.io
-auth = Class.Class()
-conn = auth.Autenticar(key)
-
+while api.Autenticar() != True:
+    api.Autenticar()
+    if api.Autenticar == True:
+      break
+      
 #Recebendo dados para buscar
 company = str(input('Company: '))
-email = conn.domain_search(company='{}'.format(company))
+email = api.domain_search(company='{}'.format(company))
+
 
 #Criando Um DataFrame
-conn = Class.Class()
-df = conn.CreateDf(email)
+create = Class.Class()
+df = create.CreateDf(email)
 
 #Exportando para uma arquivo Csv
 out = Export.Export()
