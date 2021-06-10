@@ -17,8 +17,8 @@ email = api.domain_search(company='{}'.format(company))
 
 
 #Criando Um DataFrame
-create = Class.Conection()
-df = create.CreateDf(email)
+
+df = api.CreateDf(email)
 
 #Exportando para uma arquivo Csv
 out = Export.Export()
