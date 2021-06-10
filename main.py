@@ -11,6 +11,7 @@ while api.Autenticar() != True:
 
 #Informações da Conta
 api.Acount()
+
 #Recebendo dados para buscar
 company = str(input('Buscar por empresas: '))
 email = api.domain_search(company='{}'.format(company))
