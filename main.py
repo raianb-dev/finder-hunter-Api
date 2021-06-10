@@ -1,20 +1,23 @@
 from finder import Class, Export
 
+
 #Autenticando api
-api = Class.Class()
+api = Class.Conection()
 
 while api.Autenticar() != True:
     api.Autenticar()
     if api.Autenticar == True:
       break
-      
+
+#Informações da Conta
+api.Acount()
 #Recebendo dados para buscar
-company = str(input('Company: '))
+company = str(input('Buscar por empresas: '))
 email = api.domain_search(company='{}'.format(company))
 
 
 #Criando Um DataFrame
-create = Class.Class()
+create = Class.Conection()
 df = create.CreateDf(email)
 
 #Exportando para uma arquivo Csv

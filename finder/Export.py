@@ -1,7 +1,7 @@
 from finder import Class
 
 #Método Exportar 
-class Export(Class.Class):
+class Export(Class.Conection):
   def Save (self, var):
     self.save = var.to_csv('out.csv', encoding='utf-8', index=False)
     print('Salvo com sucesso!')
