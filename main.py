@@ -1,5 +1,6 @@
 from finder import Class, Export
 
+
 #Autenticando api
 api = Class.Conection()
 
@@ -10,18 +11,22 @@ while api.Autenticar() != True:
 
 #Informações da Conta
 api.Acount()
+loop = ''
+while loop == '':
+  #Recebendo dados para buscar
+  email = api.Procurar()
 
-#Recebendo dados para buscar
-email = api.Procurar()
 
+  #Criando Um DataFrame
+  df = api.CreateDf(email)
 
-#Criando Um DataFrame
-df = api.CreateDf(email)
+  #Exportando para uma arquivo Csv
+  out = Export.Export()
+  out.Rename(df)
 
-#Exportando para uma arquivo Csv
-out = Export.Export()
-out.Rename(df)
-
+  sair = str( input( '\nPRESSIONE "ENTER" PARA CONTINUAR\nOU "QUALQUER TECLA" PARA SAIR...\n' ) )
+  if sair:
+    exit('Saindo')
 
 
 

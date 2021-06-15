@@ -1,11 +1,10 @@
-#Método Exportar 
+#Class Exportar
 class Export():
     
-  #Exportar com Rename
+  #Método Exportar
   def Rename(self, df):
-    self.nome = str(input('Nome para o arquivo: '))
+    self.nome = str(input('Salvar como: '))
     df.to_csv(f'out/{self.nome}.csv', encoding='utf-8', index=False)
     print('Salvo com sucesso!')
     indf = self.nome
     return indf
-
