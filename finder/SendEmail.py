@@ -32,8 +32,8 @@ print('Adicionando texto...')
 email_msg.attach(MIMEText(message, 'plain'))
 
 print('Obtendo arquivo...')
-filename = 'Anoexo' 
-filepath = '../out/Instagram-emails.csv'
+filename = 'Anexo' 
+filepath = '../out/'
 attachment = open(filepath, 'rb')
 
 print('Lendo arquivo...')
